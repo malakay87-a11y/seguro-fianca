@@ -1,119 +1,56 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguro Fiança Locatícia em Sorocaba</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Seguro Fiança Locatícia em Sorocaba</h1>
+    <p>Solicite sua Cotação Agora</p>
+  </header>
 
-/* Corpo */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background: #f9f9f9;
-  color: #333;
-}
+  <section id="cotacao">
+    <h2>Solicite sua Cotação</h2>
+    <form>
+      <input type="text" placeholder="Nome completo" required>
+      <input type="email" placeholder="E-mail" required>
+      <input type="tel" placeholder="Telefone/WhatsApp" required>
+      <button type="submit">Enviar Cotação</button>
+    </form>
+  </section>
 
-/* Cabeçalho */
-header {
-  background: #004aad;
-  color: #fff;
-  padding: 30px 20px;
-  text-align: center;
-}
+  <section>
+    <h2>Benefícios para Inquilinos, Proprietários e Imobiliárias</h2>
+    <p>Alugue sem caução, sem fiador e com aprovação rápida.</p>
+  </section>
 
-header h1 {
-  margin-bottom: 10px;
-}
+  <section>
+    <h2>Como funciona o seguro fiança</h2>
+    <p>O seguro cobre inadimplência, encargos e garante tranquilidade para todos os envolvidos.</p>
+  </section>
 
-/* Seções */
-section {
-  margin: 20px auto;
-  max-width: 800px;
-  padding: 20px;
-}
+  <section id="depoimentos">
+    <h2>O que nossos clientes dizem</h2>
+    <blockquote>"Consegui alugar sem fiador em Sorocaba, rápido e seguro!" – João S.</blockquote>
+    <blockquote>"A imobiliária aprovou em menos de 24h, recomendo!" – Maria P.</blockquote>
+  </section>
 
-/* Formulário de cotação */
-#cotacao {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+  <section>
+    <h2>Perguntas Frequentes (FAQ)</h2>
+    <p><strong>Quanto custa?</strong> O valor depende do aluguel e perfil do inquilino.</p>
+    <p><strong>É aceito pelas imobiliárias?</strong> Sim, é uma garantia reconhecida e segura.</p>
+  </section>
 
-form input, form button {
-  display: block;
-  width: 100%;
-  margin: 10px 0;
-  padding: 12px;
-  font-size: 16px;
-}
+  <section>
+    <a href="#cotacao" class="cta-button">Solicitar Cotação Agora</a>
+  </section>
 
-form button {
-  background: #ff6600;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-form button:hover {
-  background: #e65c00;
-}
-
-/* Botão verde CTA */
-.cta-button {
-  display: inline-block;
-  background: #28a745;
-  color: #fff;
-  padding: 12px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.cta-button:hover {
-  background: #218838;
-}
-
-/* Depoimentos */
-#depoimentos {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-blockquote {
-  font-style: italic;
-  margin: 10px 0;
-  color: #555;
-}
-
-/* Rodapé */
-footer {
-  background: #004aad;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-  section {
-    padding: 15px;
-  }
-
-  form input, form button {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .cta-button {
-    padding: 10px 15px;
-    font-size: 14px;
-  }
-}
+  <footer>
+    <p>Contato: contato@segurofianca.com | (15) 99999-9999</p>
+    <p>&copy; 2026 Seguro Fiança Locatícia</p>
+  </footer>
+</body>
+</html>
