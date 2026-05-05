@@ -1,28 +1,41 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
   background: #f9f9f9;
   color: #333;
 }
 
+/* Cabeçalho */
 header {
   background: #004aad;
   color: #fff;
-  padding: 20px;
+  padding: 30px 20px;
   text-align: center;
 }
 
-h1, h2, h3 {
+header h1 {
   margin-bottom: 10px;
 }
 
+/* Seções */
+section {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Formulário de cotação */
 #cotacao {
   background: #fff;
   padding: 20px;
-  margin: 20px auto;
-  max-width: 400px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
@@ -42,12 +55,14 @@ form button {
   cursor: pointer;
   font-weight: bold;
   border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
 form button:hover {
   background: #e65c00;
 }
 
+/* Botão verde CTA */
 .cta-button {
   display: inline-block;
   background: #28a745;
@@ -56,16 +71,17 @@ form button:hover {
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
+  transition: background 0.3s ease;
 }
 
 .cta-button:hover {
   background: #218838;
 }
 
+/* Depoimentos */
 #depoimentos {
   background: #fff;
   padding: 20px;
-  margin: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
@@ -74,4 +90,30 @@ blockquote {
   font-style: italic;
   margin: 10px 0;
   color: #555;
+}
+
+/* Rodapé */
+footer {
+  background: #004aad;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  section {
+    padding: 15px;
+  }
+
+  form input, form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .cta-button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
 }
