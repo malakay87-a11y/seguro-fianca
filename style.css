@@ -20,8 +20,9 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background: #004aad;
+  background: rgba(0,74,173,0.9); /* azul com transparência */
   z-index: 1000;
+  transition: background 0.3s ease;
 }
 
 nav ul {
@@ -50,7 +51,7 @@ nav ul li a:hover {
 /* Banner com overlay */
 .banner {
   position: relative;
-  background: url('banner.jpeg') no-repeat center center;
+  background: url('banner.jpeg.png') no-repeat center center;
   background-size: cover;
   height: 400px; /* altura do banner */
   color: white;
@@ -73,9 +74,9 @@ nav ul li a:hover {
 }
 
 .banner-content h1 {
-  font-size: 3em;       /* maior e mais impactante */
+  font-size: 3em;       /* maior e impactante */
   font-weight: 800;     /* bem forte */
-  letter-spacing: -1px; /* leve ajuste de espaçamento */
+  letter-spacing: -1px; /* leve ajuste */
   margin-bottom: 10px;
 }
 
@@ -107,14 +108,4 @@ nav ul li a:hover {
 /* Seções */
 section {
   margin: 20px auto;
-  max-width: 800px;
-  padding: 20px;
-}
-
-/* Formulário de cotação */
-#cotacao {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
+  max
