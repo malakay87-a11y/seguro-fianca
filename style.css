@@ -48,71 +48,11 @@ nav ul li a:hover {
 }
 
 /* Banner com overlay */
- .banner {
-  position: relative;
-  background: url('imagem/banner.webp') no-repeat center center;
-  background-size: cover;
-  min-height: 500px; /* altura mínima para destacar a foto */
-  color: white;
-  text-align: center;
-}
-
-}
-
-.banner .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5); /* camada escura */
-}
-
-.banner-content {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.banner-content h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.banner-content p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-.banner-content .cta {
-  background: orange;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* Seções */
-section {
-  margin: 20px auto;
-  max-width: 800px;
-  padding: 20px;
-}
-
-/* Formulário de cotação */
-#cotacao {
-  background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6
-/* Banner com overlay */
 .banner {
   position: relative;
-  background: url('banner.jpg') no-repeat center center;
+  background: url('banner.jpeg') no-repeat center center;
   background-size: cover;
-  height: 400px;
+  height: 400px; /* altura do banner */
   color: white;
   text-align: center;
 }
@@ -132,37 +72,20 @@ section {
   transform: translateY(-50%);
 }
 
-.banner-content h1 {
-  font-size: 2.5em;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.banner-content p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-.banner-content .cta {
-  background: orange;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-}
-/* Tipografia do banner */
 .banner-content h1 {
   font-size: 3em;       /* maior e mais impactante */
   font-weight: 800;     /* bem forte */
   letter-spacing: -1px; /* leve ajuste de espaçamento */
+  margin-bottom: 10px;
 }
 
 .banner-content p {
-  font-size: 1.3em;     /* um pouco menor */
-  font-weight: 400;     /* mais leve */
-  color: #f1f1f1;       /* cinza claro para contraste */
+  font-size: 1.3em;
+  font-weight: 400;
+  color: #f1f1f1;
+  margin-bottom: 20px;
 }
+
 /* Botão dentro do banner */
 .banner-content .cta {
   display: inline-block;
@@ -179,4 +102,19 @@ section {
 
 .banner-content .cta:hover {
   background: #1ebe5d;   /* tom mais escuro no hover */
+}
+
+/* Seções */
+section {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Formulário de cotação */
+#cotacao {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
