@@ -159,4 +159,48 @@ footer {
     font-size: 14px;
   }
 }
+/* Banner com overlay */
+.banner {
+  position: relative;
+  background: url('banner.jpg') no-repeat center center;
+  background-size: cover;
+  height: 400px;
+  color: white;
+  text-align: center;
+}
+
+.banner .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5); /* camada escura */
+}
+
+.banner-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.banner-content h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.banner-content .cta {
+  background: orange;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
