@@ -48,13 +48,15 @@ nav ul li a:hover {
 }
 
 /* Banner com overlay */
-.banner {
+ .banner {
   position: relative;
-  background: url('banner.jpg') no-repeat center center;
+  background: url('imagem/banner.webp') no-repeat center center;
   background-size: cover;
-  height: 400px;
+  min-height: 500px; /* altura mínima para destacar a foto */
   color: white;
   text-align: center;
+}
+
 }
 
 .banner .overlay {
