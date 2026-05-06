@@ -53,7 +53,7 @@ nav ul li a:hover {
   position: relative;
   background: url('banner.jpeg.png') no-repeat center center;
   background-size: cover;
-  height: 400px; /* altura do banner */
+  min-height: 500px; /* altura mínima para destacar a foto */
   color: white;
   text-align: center;
 }
@@ -108,4 +108,14 @@ nav ul li a:hover {
 /* Seções */
 section {
   margin: 20px auto;
-  max
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* Formulário de cotação */
+#cotacao {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
