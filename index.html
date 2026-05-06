@@ -71,84 +71,96 @@
     /* ── HERO ── */
     .hero {
       margin-top: 68px;
-      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 60%, #2563c7 100%);
+      background: linear-gradient(135deg, rgba(15,48,112,0.75) 0%, rgba(26,79,160,0.75) 60%, rgba(37,99,199,0.75) 100%), 
+                  url('banner.jpeg.png') no-repeat center center;
+      background-size: cover;
+      background-attachment: fixed;
       position: relative; overflow: hidden;
-      min-height: 580px;
+      min-height: 700px;
       display: flex; align-items: center;
     }
-    .hero-pattern {
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.07) 0%, transparent 40%);
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(255,255,255,0.07) 0%, transparent 40%);
+      z-index: 1;
     }
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
       background-size: 50px 50px;
+      z-index: 1;
     }
     .hero-inner {
-      max-width: 1140px; margin: 0 auto; padding: 72px 32px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
+      max-width: 1140px; margin: 0 auto; padding: 80px 32px;
+      display: grid; grid-template-columns: 1fr;
       align-items: center; position: relative; z-index: 2; width: 100%;
+      text-align: center;
     }
-    .hero-banner-img {
-      width: 100%; max-width: 500px; margin: 0 auto;
-      border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-      animation: slideInRight 0.8s ease;
+    .hero-content {
+      animation: slideInUp 0.8s ease;
     }
-    @keyframes slideInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes slideInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
       color: #fff; font-size: 12px; font-weight: 600;
-      padding: 6px 14px; border-radius: 20px; margin-bottom: 24px;
+      padding: 8px 16px; border-radius: 20px; margin-bottom: 24px;
       letter-spacing: 0.04em;
     }
     .hero-badge::before { content: '●'; color: var(--green); font-size: 8px; }
     .hero h1 {
       font-family: 'Fraunces', serif;
-      font-size: clamp(32px, 4.5vw, 54px);
-      color: #fff; line-height: 1.1; margin-bottom: 20px;
+      font-size: clamp(40px, 6vw, 64px);
+      color: #fff; line-height: 1.2; margin-bottom: 20px;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.3);
     }
     .hero h1 em { font-style: italic; color: #ffd580; }
-    .hero-sub { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 32px; max-width: 460px; }
-    .hero-checks { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; }
-    .hero-checks li { display: flex; align-items: center; gap: 10px; font-size: 15px; color: rgba(255,255,255,0.9); font-weight: 500; }
+    .hero-sub { 
+      font-size: 18px; color: rgba(255,255,255,0.85); 
+      line-height: 1.75; margin: 24px auto 40px; 
+      max-width: 600px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .hero-checks { 
+      list-style: none; display: flex; flex-direction: column; 
+      gap: 14px; margin: 40px auto; max-width: 500px;
+    }
+    .hero-checks li { 
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; font-size: 16px; color: rgba(255,255,255,0.9); 
+      font-weight: 500;
+    }
     .hero-checks li::before {
-      content: '✓'; width: 22px; height: 22px; min-width: 22px;
-      background: rgba(37,211,102,0.2); border: 1.5px solid rgba(37,211,102,0.5);
+      content: '✓'; width: 28px; height: 28px; min-width: 28px;
+      background: rgba(37,211,102,0.25); border: 2px solid rgba(37,211,102,0.6);
       border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 12px; color: var(--green); font-weight: 700;
+      font-size: 14px; color: var(--green); font-weight: 700;
     }
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; justify-content: center; margin-top: 48px; }
     .btn-orange {
-      display: inline-flex; align-items: center; gap: 8px;
+      display: inline-flex; align-items: center; gap: 10px;
       background: var(--orange); color: #fff;
-      font-size: 15px; font-weight: 700;
-      padding: 15px 32px; border-radius: 9px; text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      box-shadow: 0 4px 20px rgba(242,101,34,0.4);
+      font-size: 16px; font-weight: 700;
+      padding: 16px 36px; border-radius: 10px; text-decoration: none;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 6px 24px rgba(242,101,34,0.4);
     }
-    .btn-orange:hover { background: #d95a1a; transform: translateY(-2px); }
-    .hero-tagline { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 14px; }
-
-    /* hero card */
-    .hero-card {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 20px; padding: 36px 32px;
+    .btn-orange:hover { background: #d95a1a; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(242,101,34,0.5); }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.15); color: #fff; border: 2px solid rgba(255,255,255,0.3);
+      font-size: 16px; font-weight: 700;
+      padding: 14px 34px; border-radius: 10px; text-decoration: none;
+      transition: all 0.2s;
     }
-    .hero-card-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
-    .hero-stat { margin-bottom: 24px; }
-    .hero-stat-num { font-family: 'Fraunces', serif; font-size: 48px; color: #fff; line-height: 1; }
-    .hero-stat-num sup { font-size: 22px; }
-    .hero-stat-desc { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 4px; }
-    .hero-divider { height: 1px; background: rgba(255,255,255,0.12); margin: 20px 0; }
-    .hero-card-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .hero-card-list li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.8); }
-    .hero-card-list li::before { content: '→'; color: #ffd580; font-weight: 700; }
+    .btn-white:hover { background: rgba(255,255,255,0.25); border-color: rgba(255,255,255,0.5); transform: translateY(-2px); }
+    .hero-tagline { font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 20px; font-weight: 500; }
 
     /* ── STRIP ── */
     .strip {
@@ -369,7 +381,7 @@
 
     /* ── FOOTER ── */
     footer { background: var(--blue-dark); color: rgba(255,255,255,0.7); padding: 48px 32px 32px; }
-    .footer-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 32px; }
     .footer-brand strong { display: block; font-family: 'Fraunces', serif; font-size: 20px; color: #fff; margin-bottom: 8px; }
     .footer-brand p { font-size: 13px; line-height: 1.7; }
     .footer-col h4 { font-size: 13px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; }
@@ -404,8 +416,8 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-card { display: none; }
+      .hero { min-height: 600px; }
+      .hero-inner { grid-template-columns: 1fr; padding: 60px 20px; }
       .steps::before { display: none; }
       .steps { gap: 32px; }
       .form-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -416,7 +428,10 @@
     @media (max-width: 600px) {
       .section { padding: 64px 20px; }
       .form-row { grid-template-columns: 1fr; }
-      .hero-inner { padding: 56px 20px; }
+      .hero { min-height: 500px; }
+      .hero h1 { font-size: 32px; }
+      .hero-actions { flex-direction: column; }
+      .btn-orange, .btn-white { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -440,7 +455,7 @@
       <li><a href="#cotacao">Cotação</a></li>
     </ul>
     <a href="https://wa.me/5515991445597?text=Olá! Quero uma cotação de seguro fiança." class="nav-wa" target="_blank">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.704-.607-1.228-1.375-1.372-1.676-.144-.301-.003-.465.107-.617.108-.14.264-.35.394-.523.14-.203.196-.336.295-.561.099-.225.049-.426-.025-.597-.074-.17-.67-1.614-918-.223-.298-.45-.606-.561-.93-.093-.33-.31-.357-.67-.36-.36-.002-.69.01-1.053.306-.363.297-.379.775.087 1.528.465.75 1.232 1.544 1.404 1.869.173.325.288 1.018.168 1.611-.12.593-.64 1.054-1.196 1.238-.556.184-1.235.159-1.834-.099-.599-.257-.99-.688-1.234-1.165-.244-.476-.327-1.004-.16-1.501.167-.497.653-.87 1.152-1.047.499-.176.984-.148 1.463.066.48.214.83.615 1.08 1.086.25.47.365.988.297 1.5-.068.512-.327.972-.745 1.322-.418.35-.977.564-1.545.608-.568.044-1.144-.065-1.649-.365-.505-.3-.904-.81-1.13-1.4-.226-.59-.229-1.244-.008-1.834.22-.59.72-1.087 1.32-1.326.6-.238 1.268-.2 1.87.107.602.307 1.09.892 1.305 1.58.215.688.158 1.43-.167 2.063-.325.632-.973 1.118-1.68 1.29-.707.17-1.47.017-2.095-.448-.625-.465-1.048-1.217-1.165-2.01-.116-.793.073-1.605.588-2.293.515-.688 1.351-1.187 2.247-1.397.896-.21 1.858-.077 2.678.367.82.444 1.457 1.224 1.793 2.147.336.923.329 1.946.018 2.886-.31.94-.975 1.767-1.841 2.333-.866.566-1.936.851-3.04.81-1.104-.04-2.174-.47-3.029-1.202-.854-.733-1.448-1.759-1.702-2.893z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.306-.278-.46-.335-.745-.335-.188 0-.774.148-1.802 1.138-.96.951-1.528 2.288-1.686 3.883-.133 1.37.057 2.801.558 3.91 1.115 2.48 3.45 4.101 5.471 4.101.471 0 .896-.044 1.298-.14 1.527-.368 2.852-1.235 3.722-2.658.485-.804.526-1.187.526-5.775 0-.576.014-.883.056-1.08.265-1.167.862-2.188 1.769-2.99.31-.277.313-.277.313-.277zm-5.423 7.403h-.006c-.119 0-.564-.057-1.189-.184-.971-.199-1.875-.652-2.574-1.324-.381-.385-.744-1.028-.973-1.604-.118-.306-.3-.98-.365-1.701-.05-.567-.045-1.228.014-1.7.165-1.279.68-2.318 1.515-2.853.261-.168.468-.229.823-.229.3 0 .443.05.733.286.38.304.648.744.737 1.216.033.17.06.617.06 1.012 0 .876-.018 1.297-.1 1.55-.196.6-.567 1.04-1.055 1.245-.258.11-.453.137-.728.097-.378-.054-.63-.19-.852-.467-.264-.338-.389-.754-.389-1.295 0-.373.048-.667.158-.964.056-.153.095-.252.086-.217-.287.981-.257 2.215.084 3.145.204.55.569 1.113.948 1.44.53.465 1.04.721 1.591.821.28.05.89.05 1.17 0 .658-.118 1.16-.392 1.526-.828.281-.33.483-.77.564-.567zm5.423-9.324c-.307.277-.526.708-.607 1.15-.038.209-.053.708-.053 1.57 0 4.307-.027 5.13-.322 5.823-.385.909-1.127 1.618-2.08 1.965-.457.169-.744.212-1.554.224-.597.009-1.025-.009-1.289-.054-.768-.13-1.463-.488-2.009-.998-.418-.396-.712-.857-.898-1.434-.123-.381-.158-.68-.19-1.6-.024-.645-.011-.984.043-1.241.19-.937.75-1.732 1.562-2.167.532-.29.855-.377 1.534-.408.668-.03 1.006.03 1.6.263.733.29 1.22.736 1.498 1.354.147.334.21.708.21 1.251 0 .732-.087 1.177-.32 1.633-.198.388-.534.784-.912 1.068-.373.279-.97.516-1.505.62-.284.057-.906.057-1.19 0-.814-.167-1.434-.601-1.806-1.265-.22-.396-.34-.889-.34-1.451 0-.667.143-1.242.42-1.709.156-.265.36-.508.602-.73.196-.18.54-.414.794-.556.468-.274.917-.397 1.5-.407.633-.01 1.03.09 1.605.408.368.21.704.573.91 1.012.129.27.188.534.206.968.013.312.045.405.21.552.253.229.66.29.982.146.288-.127.464-.362.534-.747.03-.168.056-.563.056-1.033 0-.878.014-.983.105-1.233.256-.736.92-1.285 1.79-1.498.305-.075.993-.075 1.3 0z"/></svg>
       WhatsApp
     </a>
     <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
@@ -457,12 +472,11 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-pattern"></div>
-  <div class="hero-grid"></div>
   <div class="hero-inner">
-    <div>
-      <div class="hero-badge fade-up d1">Sorocaba e Região · Raio de 60 km</div>
+    <div class="hero-content">
+      <div class="hero-badge fade-up d1">🎯 Sorocaba e Região · Raio de 60 km</div>
       <h1 class="fade-up d2">Alugue sem Fiador<br>em <em>Sorocaba</em></h1>
+      <p class="hero-sub fade-up d3">Seguro Fiança Locatícia com aprovação em 24h. Sem necessidade de fiador ou caução. Proteção completa para proprietários.</p>
       <ul class="hero-checks fade-up d3">
         <li>Sem Fiador ou Caução</li>
         <li>Aprovação Rápida em 24h</li>
@@ -473,11 +487,11 @@
         <a href="https://wa.me/5515991445597?text=Olá! Quero uma cotação de seguro fiança." class="btn-orange" target="_blank">
           Solicite sua Cotação →
         </a>
+        <a href="#cotacao" class="btn-white">
+          Preencher Formulário
+        </a>
       </div>
-      <p class="hero-tagline fade-up d4">Rápido, Fácil e Sem Burocracia!</p>
-    </div>
-    <div class="hero-banner-img fade-up d3">
-      <img src="imagens/banner.jpeg" alt="Banner Seguro Fiança Sorocaba" style="width: 100%; height: auto; border-radius: 12px; display: block;">
+      <p class="hero-tagline fade-up d4">✨ Rápido, Fácil e Sem Burocracia!</p>
     </div>
   </div>
 </section>
@@ -766,7 +780,7 @@
   <h2>Faça sua Cotação Agora!</h2>
   <p>Rápido, gratuito e sem compromisso. Maurílio responde em minutos pelo WhatsApp.</p>
   <a href="https://wa.me/5515991445597?text=Olá! Quero fazer minha cotação de seguro fiança agora." class="wa-big-btn" target="_blank">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.704-.607-1.228-1.375-1.372-1.676-.144-.301-.003-.465.107-.617.108-.14.264-.35.394-.523.14-.203.196-.336.295-.561.099-.225.049-.426-.025-.597-.074-.17-.67-1.614-.918-.223-.298-.45-.606-.561-.93-.093-.33-.31-.357-.67-.36-.36-.002-.69.01-1.053.306-.363.297-.379.775.087 1.528.465.75 1.232 1.544 1.404 1.869.173.325.288 1.018.168 1.611-.12.593-.64 1.054-1.196 1.238-.556.184-1.235.159-1.834-.099-.599-.257-.99-.688-1.234-1.165-.244-.476-.327-1.004-.16-1.501.167-.497.653-.87 1.152-1.047.499-.176.984-.148 1.463.066.48.214.83.615 1.08 1.086.25.47.365.988.297 1.5-.068.512-.327.972-.745 1.322-.418.35-.977.564-1.545.608-.568.044-1.144-.065-1.649-.365-.505-.3-.904-.81-1.13-1.4-.226-.59-.229-1.244-.008-1.834.22-.59.72-1.087 1.32-1.326.6-.238 1.268-.2 1.87.107.602.307 1.09.892 1.305 1.58.215.688.158 1.43-.167 2.063-.325.632-.973 1.118-1.68 1.29-.707.17-1.47.017-2.095-.448-.625-.465-1.048-1.217-1.165-2.01-.116-.793.073-1.605.588-2.293.515-.688 1.351-1.187 2.247-1.397.896-.21 1.858-.077 2.678.367.82.444 1.457 1.224 1.793 2.147.336.923.329 1.946.018 2.886-.31.94-.975 1.767-1.841 2.333-.866.566-1.936.851-3.04.81-1.104-.04-2.174-.47-3.029-1.202-.854-.733-1.448-1.759-1.702-2.893z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.306-.278-.46-.335-.745-.335-.188 0-.774.148-1.802 1.138-.96.951-1.528 2.288-1.686 3.883-.133 1.37.057 2.801.558 3.91 1.115 2.48 3.45 4.101 5.471 4.101.471 0 .896-.044 1.298-.14 1.527-.368 2.852-1.235 3.722-2.658.485-.804.526-1.187.526-5.775 0-.576.014-.883.056-1.08.265-1.167.862-2.188 1.769-2.99.31-.277.313-.277.313-.277zm-5.423 7.403h-.006c-.119 0-.564-.057-1.189-.184-.971-.199-1.875-.652-2.574-1.324-.381-.385-.744-1.028-.973-1.604-.118-.306-.3-.98-.365-1.701-.05-.567-.045-1.228.014-1.7.165-1.279.68-2.318 1.515-2.853.261-.168.468-.229.823-.229.3 0 .443.05.733.286.38.304.648.744.737 1.216.033.17.06.617.06 1.012 0 .876-.018 1.297-.1 1.55-.196.6-.567 1.04-1.055 1.245-.258.11-.453.137-.728.097-.378-.054-.63-.19-.852-.467-.264-.338-.389-.754-.389-1.295 0-.373.048-.667.158-.964.056-.153.095-.252.086-.217-.287.981-.257 2.215.084 3.145.204.55.569 1.113.948 1.44.53.465 1.04.721 1.591.821.28.05.89.05 1.17 0 .658-.118 1.16-.392 1.526-.828.281-.33.483-.77.564-.567z"/></svg>
     Chamar no WhatsApp — (15) 99144-5597
   </a>
   <p class="wa-note">Ou envie um e-mail para maurilio.angelo@gmail.com</p>
@@ -852,11 +866,11 @@
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">O que é o seguro fiança locatícia?</button>
-        <div class="faq-a">O seguro fiança é uma modalidade de garantia locatícia em que uma seguradora garante ao proprietário o pagamento do aluguel e encargos caso o inquilino não cumpra suas obrigações.</div>
+        <div class="faq-a">O seguro fiança é uma modalidade de garantia locatícia em que uma seguradora garante ao proprietário o pagamento do aluguel e encargos caso o inquilino não cumpra com suas obrigações.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Quanto custa o seguro fiança?</button>
-        <div class="faq-a">O valor varia conforme o aluguel e o perfil de crédito. Em geral, representa entre 8% e 15% do valor anual do aluguel, pago em parcelas mensais. Para um aluguel de R$1.500, fica em torno de R$100 a R$180 por mês.</div>
+        <div class="faq-a">O valor varia conforme o aluguel e o perfil de crédito. Em geral, representa entre 8% e 15% do valor anual do aluguel, pago em parcelas mensais. Para um aluguel de R$1.000, você pagaria entre R$80 e R$150 por mês.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">A análise de crédito prejudica meu score?</button>
@@ -868,11 +882,11 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre seguro fiança e título de capitalização?</button>
-        <div class="faq-a">No seguro fiança você paga uma parcela anual acessível. No título de capitalização, é preciso desembolsar o valor total de uma só vez — cerca de 12x o aluguel — o que deixa a opção bem mais cara.</div>
+        <div class="faq-a">No seguro fiança você paga uma parcela mensal acessível. No título de capitalização, é preciso desembolsar o valor total de uma só vez — cerca de 12x o aluguel. O seguro fiança oferece melhor custo-benefício.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">O proprietário precisa aceitar o seguro fiança?</button>
-        <div class="faq-a">Pela Lei do Inquilinato (Lei 8.245/91), o proprietário pode escolher a modalidade de garantia. O seguro fiança é amplamente aceito pois oferece proteção superior às outras opções.</div>
+        <div class="faq-a">Pela Lei do Inquilinato (Lei 8.245/91), o proprietário pode escolher a modalidade de garantia. O seguro fiança é amplamente aceito pois oferece proteção superior à caução tradicional.</div>
       </div>
     </div>
   </div>
@@ -882,6 +896,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
+      <strong>Maurílio Angelo</strong>
       <p>Especialista em Seguro Fiança Locatícia em Sorocaba e região. Atendimento personalizado num raio de 60 km. Sem fiador, sem caução, aprovação em 24h.</p>
     </div>
     <div class="footer-col">
@@ -908,7 +923,7 @@
 <!-- WA FLOAT -->
 <a href="https://wa.me/5515991445597?text=Olá! Quero uma cotação de seguro fiança." class="wa-float" target="_blank">
   <div class="wa-pulse"></div>
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.704-.607-1.228-1.375-1.372-1.676-.144-.301-.003-.465.107-.617.108-.14.264-.35.394-.523.14-.203.196-.336.295-.561.099-.225.049-.426-.025-.597-.074-.17-.67-1.614-.918-.223-.298-.45-.606-.561-.93-.093-.33-.31-.357-.67-.36-.36-.002-.69.01-1.053.306-.363.297-.379.775.087 1.528.465.75 1.232 1.544 1.404 1.869.173.325.288 1.018.168 1.611-.12.593-.64 1.054-1.196 1.238-.556.184-1.235.159-1.834-.099-.599-.257-.99-.688-1.234-1.165-.244-.476-.327-1.004-.16-1.501.167-.497.653-.87 1.152-1.047.499-.176.984-.148 1.463.066.48.214.83.615 1.08 1.086.25.47.365.988.297 1.5-.068.512-.327.972-.745 1.322-.418.35-.977.564-1.545.608-.568.044-1.144-.065-1.649-.365-.505-.3-.904-.81-1.13-1.4-.226-.59-.229-1.244-.008-1.834.22-.59.72-1.087 1.32-1.326.6-.238 1.268-.2 1.87.107.602.307 1.09.892 1.305 1.58.215.688.158 1.43-.167 2.063-.325.632-.973 1.118-1.68 1.29-.707.17-1.47.017-2.095-.448-.625-.465-1.048-1.217-1.165-2.01-.116-.793.073-1.605.588-2.293.515-.688 1.351-1.187 2.247-1.397.896-.21 1.858-.077 2.678.367.82.444 1.457 1.224 1.793 2.147.336.923.329 1.946.018 2.886-.31.94-.975 1.767-1.841 2.333-.866.566-1.936.851-3.04.81-1.104-.04-2.174-.47-3.029-1.202-.854-.733-1.448-1.759-1.702-2.893z"/></svg>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.306-.278-.46-.335-.745-.335-.188 0-.774.148-1.802 1.138-.96.951-1.528 2.288-1.686 3.883-.133 1.37.057 2.801.558 3.91 1.115 2.48 3.45 4.101 5.471 4.101.471 0 .896-.044 1.298-.14 1.527-.368 2.852-1.235 3.722-2.658.485-.804.526-1.187.526-5.775 0-.576.014-.883.056-1.08.265-1.167.862-2.188 1.769-2.99.31-.277.313-.277.313-.277zm-5.423 7.403h-.006c-.119 0-.564-.057-1.189-.184-.971-.199-1.875-.652-2.574-1.324-.381-.385-.744-1.028-.973-1.604-.118-.306-.3-.98-.365-1.701-.05-.567-.045-1.228.014-1.7.165-1.279.68-2.318 1.515-2.853.261-.168.468-.229.823-.229.3 0 .443.05.733.286.38.304.648.744.737 1.216.033.17.06.617.06 1.012 0 .876-.018 1.297-.1 1.55-.196.6-.567 1.04-1.055 1.245-.258.11-.453.137-.728.097-.378-.054-.63-.19-.852-.467-.264-.338-.389-.754-.389-1.295 0-.373.048-.667.158-.964.056-.153.095-.252.086-.217-.287.981-.257 2.215.084 3.145.204.55.569 1.113.948 1.44.53.465 1.04.721 1.591.821.28.05.89.05 1.17 0 .658-.118 1.16-.392 1.526-.828.281-.33.483-.77.564-.567z" fill="currentColor"/></svg>
 </a>
 
 <script>
