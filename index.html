@@ -92,6 +92,12 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 64px;
       align-items: center; position: relative; z-index: 2; width: 100%;
     }
+    .hero-banner-img {
+      width: 100%; max-width: 500px; margin: 0 auto;
+      border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      animation: slideInRight 0.8s ease;
+    }
+    @keyframes slideInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
@@ -363,7 +369,7 @@
 
     /* ── FOOTER ── */
     footer { background: var(--blue-dark); color: rgba(255,255,255,0.7); padding: 48px 32px 32px; }
-    .footer-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px; }
     .footer-brand strong { display: block; font-family: 'Fraunces', serif; font-size: 20px; color: #fff; margin-bottom: 8px; }
     .footer-brand p { font-size: 13px; line-height: 1.7; }
     .footer-col h4 { font-size: 13px; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; }
@@ -434,7 +440,7 @@
       <li><a href="#cotacao">Cotação</a></li>
     </ul>
     <a href="https://wa.me/5515991445597?text=Olá! Quero uma cotação de seguro fiança." class="nav-wa" target="_blank">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.704-.607-1.228-1.375-1.372-1.676-.144-.301-.003-.465.107-.617.108-.14.264-.35.394-.523.14-.203.196-.336.295-.561.099-.225.049-.426-.025-.597-.074-.17-.67-1.614-918-.223-.298-.45-.606-.561-.93-.093-.33-.31-.357-.67-.36-.36-.002-.69.01-1.053.306-.363.297-.379.775.087 1.528.465.75 1.232 1.544 1.404 1.869.173.325.288 1.018.168 1.611-.12.593-.64 1.054-1.196 1.238-.556.184-1.235.159-1.834-.099-.599-.257-.99-.688-1.234-1.165-.244-.476-.327-1.004-.16-1.501.167-.497.653-.87 1.152-1.047.499-.176.984-.148 1.463.066.48.214.83.615 1.08 1.086.25.47.365.988.297 1.5-.068.512-.327.972-.745 1.322-.418.35-.977.564-1.545.608-.568.044-1.144-.065-1.649-.365-.505-.3-.904-.81-1.13-1.4-.226-.59-.229-1.244-.008-1.834.22-.59.72-1.087 1.32-1.326.6-.238 1.268-.2 1.87.107.602.307 1.09.892 1.305 1.58.215.688.158 1.43-.167 2.063-.325.632-.973 1.118-1.68 1.29-.707.17-1.47.017-2.095-.448-.625-.465-1.048-1.217-1.165-2.01-.116-.793.073-1.605.588-2.293.515-.688 1.351-1.187 2.247-1.397.896-.21 1.858-.077 2.678.367.82.444 1.457 1.224 1.793 2.147.336.923.329 1.946.018 2.886-.31.94-.975 1.767-1.841 2.333-.866.566-1.936.851-3.04.81-1.104-.04-2.174-.47-3.029-1.202-.854-.733-1.448-1.759-1.702-2.893z"/></svg>
       WhatsApp
     </a>
     <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
@@ -470,24 +476,8 @@
       </div>
       <p class="hero-tagline fade-up d4">Rápido, Fácil e Sem Burocracia!</p>
     </div>
-    <div class="hero-card fade-up d3">
-      <div class="hero-card-label">Por que escolher o Seguro Fiança?</div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">24<small style="font-size:22px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;">h</small></div>
-        <div class="hero-stat-desc">Aprovação em até 24 horas úteis</div>
-      </div>
-      <div class="hero-divider"></div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">60<small style="font-size:22px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;">km</small></div>
-        <div class="hero-stat-desc">Raio de atendimento em toda a região</div>
-      </div>
-      <div class="hero-divider"></div>
-      <ul class="hero-card-list">
-        <li>Maurílio Angelo — Corretor Especialista</li>
-        <li>Porto Seguro · Tokio · Itaú · Bradesco</li>
-        <li>Atendimento personalizado via WhatsApp</li>
-        <li>(15) 99144-5597</li>
-      </ul>
+    <div class="hero-banner-img fade-up d3">
+      <img src="imagens/banner.jpeg" alt="Banner Seguro Fiança Sorocaba" style="width: 100%; height: auto; border-radius: 12px; display: block;">
     </div>
   </div>
 </section>
@@ -776,7 +766,7 @@
   <h2>Faça sua Cotação Agora!</h2>
   <p>Rápido, gratuito e sem compromisso. Maurílio responde em minutos pelo WhatsApp.</p>
   <a href="https://wa.me/5515991445597?text=Olá! Quero fazer minha cotação de seguro fiança agora." class="wa-big-btn" target="_blank">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.704-.607-1.228-1.375-1.372-1.676-.144-.301-.003-.465.107-.617.108-.14.264-.35.394-.523.14-.203.196-.336.295-.561.099-.225.049-.426-.025-.597-.074-.17-.67-1.614-.918-.223-.298-.45-.606-.561-.93-.093-.33-.31-.357-.67-.36-.36-.002-.69.01-1.053.306-.363.297-.379.775.087 1.528.465.75 1.232 1.544 1.404 1.869.173.325.288 1.018.168 1.611-.12.593-.64 1.054-1.196 1.238-.556.184-1.235.159-1.834-.099-.599-.257-.99-.688-1.234-1.165-.244-.476-.327-1.004-.16-1.501.167-.497.653-.87 1.152-1.047.499-.176.984-.148 1.463.066.48.214.83.615 1.08 1.086.25.47.365.988.297 1.5-.068.512-.327.972-.745 1.322-.418.35-.977.564-1.545.608-.568.044-1.144-.065-1.649-.365-.505-.3-.904-.81-1.13-1.4-.226-.59-.229-1.244-.008-1.834.22-.59.72-1.087 1.32-1.326.6-.238 1.268-.2 1.87.107.602.307 1.09.892 1.305 1.58.215.688.158 1.43-.167 2.063-.325.632-.973 1.118-1.68 1.29-.707.17-1.47.017-2.095-.448-.625-.465-1.048-1.217-1.165-2.01-.116-.793.073-1.605.588-2.293.515-.688 1.351-1.187 2.247-1.397.896-.21 1.858-.077 2.678.367.82.444 1.457 1.224 1.793 2.147.336.923.329 1.946.018 2.886-.31.94-.975 1.767-1.841 2.333-.866.566-1.936.851-3.04.81-1.104-.04-2.174-.47-3.029-1.202-.854-.733-1.448-1.759-1.702-2.893z"/></svg>
     Chamar no WhatsApp — (15) 99144-5597
   </a>
   <p class="wa-note">Ou envie um e-mail para maurilio.angelo@gmail.com</p>
@@ -862,11 +852,11 @@
     <div class="faq-list">
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">O que é o seguro fiança locatícia?</button>
-        <div class="faq-a">O seguro fiança é uma modalidade de garantia locatícia em que uma seguradora garante ao proprietário o pagamento do aluguel e encargos caso o inquilino não cumpra as obrigações. Substitui completamente o fiador e o depósito caução.</div>
+        <div class="faq-a">O seguro fiança é uma modalidade de garantia locatícia em que uma seguradora garante ao proprietário o pagamento do aluguel e encargos caso o inquilino não cumpra suas obrigações.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Quanto custa o seguro fiança?</button>
-        <div class="faq-a">O valor varia conforme o aluguel e o perfil de crédito. Em geral, representa entre 8% e 15% do valor anual do aluguel, pago em parcelas mensais. Para um aluguel de R$1.000/mês, o custo total fica em torno de R$1.500/ano — muito menor que os R$12.000 de um título de capitalização.</div>
+        <div class="faq-a">O valor varia conforme o aluguel e o perfil de crédito. Em geral, representa entre 8% e 15% do valor anual do aluguel, pago em parcelas mensais. Para um aluguel de R$1.500, fica em torno de R$100 a R$180 por mês.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">A análise de crédito prejudica meu score?</button>
@@ -878,11 +868,11 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Qual a diferença entre seguro fiança e título de capitalização?</button>
-        <div class="faq-a">No seguro fiança você paga uma parcela anual acessível. No título de capitalização, é preciso desembolsar o valor total de uma só vez — cerca de 12x o aluguel. Além disso, o seguro fiança oferece cobertura completa contra inadimplência, danos ao imóvel, encargos e custas judiciais.</div>
+        <div class="faq-a">No seguro fiança você paga uma parcela anual acessível. No título de capitalização, é preciso desembolsar o valor total de uma só vez — cerca de 12x o aluguel — o que deixa a opção bem mais cara.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">O proprietário precisa aceitar o seguro fiança?</button>
-        <div class="faq-a">Pela Lei do Inquilinato (Lei 8.245/91), o proprietário pode escolher a modalidade de garantia. O seguro fiança é amplamente aceito pois oferece proteção superior à caução tradicional. Em caso de dúvida, Maurílio pode ajudar a apresentar as vantagens ao proprietário ou imobiliária.</div>
+        <div class="faq-a">Pela Lei do Inquilinato (Lei 8.245/91), o proprietário pode escolher a modalidade de garantia. O seguro fiança é amplamente aceito pois oferece proteção superior às outras opções.</div>
       </div>
     </div>
   </div>
@@ -918,7 +908,7 @@
 <!-- WA FLOAT -->
 <a href="https://wa.me/5515991445597?text=Olá! Quero uma cotação de seguro fiança." class="wa-float" target="_blank">
   <div class="wa-pulse"></div>
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.704-.607-1.228-1.375-1.372-1.676-.144-.301-.003-.465.107-.617.108-.14.264-.35.394-.523.14-.203.196-.336.295-.561.099-.225.049-.426-.025-.597-.074-.17-.67-1.614-.918-.223-.298-.45-.606-.561-.93-.093-.33-.31-.357-.67-.36-.36-.002-.69.01-1.053.306-.363.297-.379.775.087 1.528.465.75 1.232 1.544 1.404 1.869.173.325.288 1.018.168 1.611-.12.593-.64 1.054-1.196 1.238-.556.184-1.235.159-1.834-.099-.599-.257-.99-.688-1.234-1.165-.244-.476-.327-1.004-.16-1.501.167-.497.653-.87 1.152-1.047.499-.176.984-.148 1.463.066.48.214.83.615 1.08 1.086.25.47.365.988.297 1.5-.068.512-.327.972-.745 1.322-.418.35-.977.564-1.545.608-.568.044-1.144-.065-1.649-.365-.505-.3-.904-.81-1.13-1.4-.226-.59-.229-1.244-.008-1.834.22-.59.72-1.087 1.32-1.326.6-.238 1.268-.2 1.87.107.602.307 1.09.892 1.305 1.58.215.688.158 1.43-.167 2.063-.325.632-.973 1.118-1.68 1.29-.707.17-1.47.017-2.095-.448-.625-.465-1.048-1.217-1.165-2.01-.116-.793.073-1.605.588-2.293.515-.688 1.351-1.187 2.247-1.397.896-.21 1.858-.077 2.678.367.82.444 1.457 1.224 1.793 2.147.336.923.329 1.946.018 2.886-.31.94-.975 1.767-1.841 2.333-.866.566-1.936.851-3.04.81-1.104-.04-2.174-.47-3.029-1.202-.854-.733-1.448-1.759-1.702-2.893z"/></svg>
 </a>
 
 <script>
@@ -941,8 +931,3 @@
 </script>
 </body>
 </html>
-<!-- Rodapé -->
-<footer id="contato">
-  <p>© 2026 Maurílio Angelo · CRECI/SP 103.079 · Sorocaba e Região</p>
-  <p><a href="politica-privacidade.html">Política de Privacidade</a></p>
-</footer>
