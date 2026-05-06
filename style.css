@@ -161,3 +161,20 @@ section {
   font-weight: 400;     /* mais leve */
   color: #f1f1f1;       /* cinza claro para contraste */
 }
+/* Botão dentro do banner */
+.banner-content .cta {
+  display: inline-block;
+  margin-top: 15px;
+  background: #25d366;   /* verde WhatsApp */
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1em;
+  transition: background 0.3s ease;
+}
+
+.banner-content .cta:hover {
+  background: #1ebe5d;   /* tom mais escuro no hover */
+}
