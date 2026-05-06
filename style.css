@@ -149,3 +149,15 @@ section {
   text-decoration: none;
   font-weight: bold;
 }
+/* Tipografia do banner */
+.banner-content h1 {
+  font-size: 3em;       /* maior e mais impactante */
+  font-weight: 800;     /* bem forte */
+  letter-spacing: -1px; /* leve ajuste de espaçamento */
+}
+
+.banner-content p {
+  font-size: 1.3em;     /* um pouco menor */
+  font-weight: 400;     /* mais leve */
+  color: #f1f1f1;       /* cinza claro para contraste */
+}
