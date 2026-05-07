@@ -129,3 +129,30 @@ section {
 .whatsapp-button i {
   color: #25D366; /* verde oficial do WhatsApp */
 }
+/* Botão WhatsApp */
+.whatsapp-button {
+  display: inline-flex;       /* ícone + texto alinhados */
+  align-items: center;
+  background: #25D366;        /* verde oficial */
+  color: #fff;                /* texto branco */
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background: #1ebe5d;        /* tom mais escuro no hover */
+}
+
+.whatsapp-button i {
+  color: #fff;                /* ícone branco dentro do botão verde */
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+/* Caso o botão use SVG em vez de <i>, força o ícone a ficar branco */
+.whatsapp-button svg path {
+  fill: #fff; /* ícone branco dentro do botão verde */
+}
