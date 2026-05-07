@@ -126,3 +126,6 @@ section {
   margin-right: 8px; /* opcional: espaço entre ícone e texto */
 }
 
+.whatsapp-button i {
+  color: #25D366; /* verde oficial do WhatsApp */
+}
