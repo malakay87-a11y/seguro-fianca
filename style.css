@@ -120,4 +120,9 @@ section {
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+.whatsapp-button i {
+  color: #25D366; /* verde oficial do WhatsApp */
+  font-size: 1.2em; /* opcional: ajusta tamanho */
+  margin-right: 8px; /* opcional: espaço entre ícone e texto */
+}
 
