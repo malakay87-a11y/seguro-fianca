@@ -156,3 +156,7 @@ section {
 .whatsapp-button svg path {
   fill: #fff; /* ícone branco dentro do botão verde */
 }
+/* Força o ícone SVG do WhatsApp a ficar branco dentro do botão verde */
+.whatsapp-button svg path {
+  fill: #fff; /* ícone branco dentro do botão verde */
+}
