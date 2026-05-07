@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://malakay87-a11y.github.io/seguro-fianca/</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-</urlset>
-<!-- teste -->
+
   <url>
     <loc>https://malakay87-a11y.github.io/seguro-fianca/pagina1.html</loc>
     <lastmod>2026-05-07</lastmod>
@@ -25,5 +25,6 @@
     <lastmod>2026-05-07</lastmod>
     <priority>0.7</priority>
   </url>
+
 </urlset>
 
